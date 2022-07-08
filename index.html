@@ -37,41 +37,46 @@ const video = document.getElementById("video-ele")
 
 const btn = document.getElementById("btn")
 
-
-
-setInterval(function () {
-
-  $(document).ready(function () {
+$(document).ready(function () {
           // Hide the div
           $(btn).hide();
-          // Show the div after 5s
-          $(btn).delay(500).fadeIn(100);  
+          if(!video.paused) {
+            $(btn).delay(500).fadeIn(100);  
+            console.log(video.paused + "hello")
+          }else { 
+            $(btn).hide()
+            console.log(video.paused + "fhjlskf")
+          }
       });  
 
 
-  $('body').on('click touchstart', function() { 
-  const video = document.getElementById("video-ele")
-      if(video.paused) { 
-          console.log("yeah")
-          video.play()
-      }else { 
-          video.play()
-          console.log("Is playing")
-      }
-});
+// setInterval(function () {
 
 
 
-  if(video.paused) { 
-    console.log("hello")
-  }else { 
-    console.log(video.paused)
-    btn.classList.add("hideVideo")
+//   $('body').on('click touchstart', function() { 
+//   const video = document.getElementById("video-ele")
+//       if(video.paused) { 
+//           console.log("yeah")
+//           video.play()
+//       }else { 
+//           video.play()
+//           console.log("Is playing")
+//       }
+// });
 
 
-  }
-}, 5
-)
+
+//   if(video.paused) { 
+//     console.log("hello")
+//   }else { 
+//     console.log(video.paused)
+//     btn.classList.add("hideVideo")
+
+
+//   }
+// }, 5
+// )
 
 
 
