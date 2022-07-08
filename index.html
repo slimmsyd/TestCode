@@ -37,52 +37,68 @@ const video = document.getElementById("video-ele")
 
 const btn = document.getElementById("btn")
 
+videoElement.addEventListener("playing", hideVideo, false); 
 
-
-
-setInterval(function () {
-
-  $(document).ready(function () {
-const video = document.getElementById("video-ele")
-
-          // Hide the div
-          if(video.paused) {
-            $(btn).show()
-            console.log(video.paused + "hello")
-          }
-          
-          if( video.readyState > 1){ 
-            console.log(video.paused + "fhjlskf")
-            $(btn).delay(5).fadeOut(100);  
-
-          }
-          
-
-      });  
-
-  $('body').on('click touchstart', function() { 
+function hideVideo() { 
+  const videoElement = document.getElementById('video-ele');
   const video = document.getElementById("video-ele")
-      if(video.paused) { 
-          console.log("yeah")
-          video.play()
-      }else { 
-          video.play()
-          console.log("Is playing")
-      }
-});
+
+  const btn = document.getElementById("btn")
+  btn.classList.add = "hideVideo"
+  videoElement.removeEventListener("playing", hideVideo, false);
+
+  console.log("fjkls")
+}
+
+// setInterval(function () { 
+//   $(document).ready(function () {
+// const video = document.getElementById("video-ele")
+
+//           // Hide the div
+//           if(video.paused) {
+//             $(btn).show()
+//             console.log(video.paused + "hello")
+//           }
+          
+//           if( video.readyState > 1){ 
+//             console.log(video.paused + "fhjlskf")
+//             $(btn).delay(5).fadeOut(100);  
+
+//           }
+          
+
+//       });  
+  
+// }, 100)
+
+
+// setInterval(function () {
 
 
 
-//   if(video.paused) { 
-//     console.log("hello")
-//   }else { 
-//     console.log(video.paused)
-//     btn.classList.add("hideVideo")
+//   $('body').on('click touchstart', function() { 
+//   const video = document.getElementById("video-ele")
+//       if(video.paused) { 
+//           console.log("yeah")
+//           video.play()
+//       }else { 
+//           video.play()
+//           console.log("Is playing")
+//       }
+// });
 
 
-//   }
-}, 5
-)
+
+// //   if(video.paused) { 
+// //     console.log("hello")
+// //   }else { 
+// //     console.log(video.paused)
+// //     btn.classList.add("hideVideo")
+
+
+// //   }
+// }, 5
+// )
 
 
 
@@ -159,7 +175,7 @@ button {
   justify-content: center;
   transition: opacity 300ms ease-in-out;
   opacity: 100%;
-  visibility: hidden;
+  display: none;
 }
 
 .btnNone { 
