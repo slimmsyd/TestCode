@@ -39,7 +39,6 @@ const btn = document.getElementById("btn")
 
 $(document).ready(function () {
           // Hide the div
-          $(btn).hide();
           if(!video.paused) {
             $(btn).delay(500).fadeIn(100);  
             console.log(video.paused + "hello")
@@ -152,6 +151,7 @@ button {
   justify-content: center;
   transition: opacity 300ms ease-in-out;
   opacity: 100%;
+  display: none;
 }
 
 .btnNone { 
