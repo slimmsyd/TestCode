@@ -37,6 +37,17 @@ const video = document.getElementById("video-ele")
 const btn = document.getElementById("btn")
 setInterval(function () {
 
+  $('body').on('click touchstart', function() { 
+  const video = document.getElementById("video-ele")
+      if(video.paused) { 
+          console.log("yeah")
+          video.play()
+      }else { 
+          video.play()
+          console.log("Is playing")
+      }
+})
+
   if(video.paused) { 
     console.log("hello")
   }else { 
@@ -48,16 +59,7 @@ setInterval(function () {
 }, 5
 )
 
-$('body').on('click touchstart', function() { 
-  const video = document.getElementById("video-ele")
-      if(video.paused) { 
-          console.log("yeah")
-          video.play()
-      }else { 
-          video.play()
-          console.log("Is playing")
-      }
-})
+
 
 function removeButton() { 
    const button =  document.getElementById("btn");
