@@ -37,10 +37,7 @@ const video = document.getElementById("video-ele")
 
 const btn = document.getElementById("btn")
 
-setInterval(function () { 
 
-  
-})
 
 
 setInterval(function () {
@@ -54,9 +51,9 @@ const video = document.getElementById("video-ele")
             console.log(video.paused + "hello")
           }
           
-          if( video.readyState > 1){ 
+          if( video.readyState > 2){ 
             console.log(video.paused + "fhjlskf")
-            $(btn).delay(5).fadeOut(100);  
+            $(btn).delay(100).fadeOut(100);  
 
           }
           
@@ -162,6 +159,7 @@ button {
   justify-content: center;
   transition: opacity 300ms ease-in-out;
   opacity: 100%;
+  display: none;
 }
 
 .btnNone { 
