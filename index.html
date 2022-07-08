@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link rel = "stylesheet" src = "style.css" />
+    <title>Document</title>
+</head>
+<body>
+
+
+    
+  <div class="fullscreen-video-wrap" id = "body">
+      <div class = "innerDiv">
+          <div id = "sim"></div>
+            <div id = "container">
+              <div align="center">
+                <button onclick = "removeButton()" id = "btn" type="button">TAP TO ENTER OFFICE</button>
+              </div>
+            </div>
+          <video id = "video-ele" class="video-js" loop autoplay preload="none" muted defaultMuted playsinline  concontextmenu="return false;"  preload="auto" >
+              poster="https:{{ block.settings.video_image | img_url: 'master' }}">
+                  <source src="https://cdn.shopify.com/videos/c/o/v/ede4a458512d4c44a896caf1133498d6.mp4" type="video/mp4">
+              </video>
+      </div>
+    
+  </div>
+
+  <script>
+
+const body = document.getElementsByTagName("body")
+const videoElement = document.getElementById('video-ele');
+const video = document.getElementById("video-ele")
+
+const btn = document.getElementById("btn")
+setInterval(function () {
+
+  if(video.paused) { 
+    console.log("hello")
+  }else { 
+    console.log(video.paused)
+    btn.classList.add("hideVideo")
+
+
+  }
+}, 5
+)
+
+$('body').on('click touchstart', function() { 
+  const video = document.getElementById("video-ele")
+      if(video.paused) { 
+          console.log("yeah")
+ element.style.visibility = "hidden"
+          video.play()
+      }else { 
+          video.play()
+          console.log("Is playing")
+      }
+})
+
+function removeButton() { 
+   const button =  document.getElementById("btn");
+    button.classList.add("btnNone");
+
+
+}
+  </script>
+    
+</body>
+
+
+
+<style>
+
+
+
+.fullscreen-video-wrap{
+  position:fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+
+}
+
+body {
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+}
+#video-ele {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media only screen and (max-width: 750px) {
+  #video-ele{
+  position: fixed;
+  min-width: 100vw;
+  min-height: 100vh;
+  z-index: -1; /* Makes video a background layer */
+  }
+}
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  margin: auto;
+  width: 60%;
+}
+
+button {
+  background-color: #1683ff;
+  color: #eee;
+  border:2px solid #1683ff;
+  z-index: 4;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 300ms ease-in-out;
+  opacity: 100%;
+}
+
+.btnNone { 
+    opacity: 0%;
+    transition: opacity 500ms ease-in-out;
+}
+.hideVideo { 
+  display: none;
+}
+@media only screen and (min-width: 750px) {
+  #container{
+    display:none;
+  }
+}
+
+</style>
+
+
+
+</html>
