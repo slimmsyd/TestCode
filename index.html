@@ -20,7 +20,7 @@
                 <button onclick = "removeButton()" id = "btn" type="button">TAP TO ENTER OFFICE</button>
               </div>
             </div>
-          <video id = "video-ele" class="video-js" loop autoplay preload="none" muted defaultMuted playsinline  concontextmenu="return false;"  preload="auto" >
+          <video id = "video-ele" class="video-js" loop autoplay preload="auto" muted defaultMuted playsinline  concontextmenu="return false;"  preload="auto" >
               poster="https:{{ block.settings.video_image | img_url: 'master' }}">
                   <source src="https://cdn.shopify.com/videos/c/o/v/ede4a458512d4c44a896caf1133498d6.mp4" type="video/mp4">
               </video>
@@ -34,9 +34,9 @@ const body = document.getElementsByTagName("body")
 const videoElement = document.getElementById('video-ele');
 const video = document.getElementById("video-ele")
 
+
 const btn = document.getElementById("btn")
 setInterval(function () {
-
   $('body').on('click touchstart', function() { 
   const video = document.getElementById("video-ele")
       if(video.paused) { 
@@ -46,7 +46,12 @@ setInterval(function () {
           video.play()
           console.log("Is playing")
       }
-})
+});
+
+if(videoElement.readyState === 4) { 
+  btn.classList.add("hideVideo")
+}
+
 
   if(video.paused) { 
     console.log("hello")
