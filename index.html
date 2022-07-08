@@ -36,6 +36,11 @@ const video = document.getElementById("video-ele")
 
 
 const btn = document.getElementById("btn")
+
+$(function() { 
+  $("btn").delay(1000)
+})
+
 setInterval(function () {
   $('body').on('click touchstart', function() { 
   const video = document.getElementById("video-ele")
