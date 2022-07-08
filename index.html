@@ -51,7 +51,7 @@ const video = document.getElementById("video-ele")
             console.log(video.paused + "hello")
           }
           
-          if( video.readyState > 2){ 
+          if( video.readyState > 1){ 
             console.log(video.paused + "fhjlskf")
             $(btn).delay(5).fadeOut(100);  
 
@@ -159,7 +159,7 @@ button {
   justify-content: center;
   transition: opacity 300ms ease-in-out;
   opacity: 100%;
-  display: none;
+  visibility: hidden;
 }
 
 .btnNone { 
