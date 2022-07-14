@@ -17,6 +17,7 @@
           <div id = "sim"></div>
             <div id = "container">
               <div align="center">
+                <img onclick="remove()" id ="image" src = "kharibenardproject_Moment.jpg" />
                 <button onclick = "removeButton()" id = "btn" type="button">TAP TO ENTER OFFICE</button>
               </div>
             </div>
@@ -88,9 +89,15 @@ function removeButton() {
    const button =  document.getElementById("btn");
    console.log(video.paused)
     button.classList.add("btnNone");
+    
 
 
 }
+  function remove() { 
+   const img = document.getElementById("image");
+    img.classList.add("btnNone")
+  }
+
   </script>
     
 </body>
@@ -99,7 +106,11 @@ function removeButton() {
 
 <style>
 
-
+ img {
+  z-index: 1000;
+  object-fit: contain;
+  height: 100%;
+}
 
 .fullscreen-video-wrap{
   position:fixed;
